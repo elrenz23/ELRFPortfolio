@@ -32,6 +32,7 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+background-attachment: fixed;
 
  min-height: 300px;     /* adjust taller/shorter as you like */
 }
@@ -631,4 +632,5 @@ a:hover {
 <p>Same idea, but the image floats to the left and the text wraps to the right. Great for alternating visuals throughout a long article...</p>
 
 https://youtu.be/KwqXK_gN974?si=KHu0iokPXwNsBPL1
+
 */
