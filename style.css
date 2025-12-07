@@ -537,16 +537,16 @@ a:hover {
 
 /* Thumbnail images aligned left or right with text wrapping */
 
+/* Figure as the container */
 .thumb-right,
 .thumb-left,
 .thumb-center {
   max-width: 180px;
   width: 35%;
   min-width: 120px;
-  border-radius: 10px;
   margin: 0.25rem 0 0.75rem;
   display: block;
-  object-fit: cover;
+  border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.25);
 }
 
@@ -566,7 +566,26 @@ a:hover {
   margin-left: auto;
   margin-right: auto;
   float: none;
+}
+
+/* Actual image inside the figure */
+.thumb-right img,
+.thumb-left img,
+.thumb-center img {
+  width: 100%;
   display: block;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+/* Caption */
+.thumb-right figcaption,
+.thumb-left figcaption,
+.thumb-center figcaption {
+  margin-top: 0.35rem;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  text-align: center;
 }
 
 /* Mobile adjustments: remove floats so images don't squeeze text */
@@ -576,12 +595,13 @@ a:hover {
   .thumb-center {
     float: none;
     margin: 1rem auto;
-    display: block;
     width: 60%;
   }
 }
+
 
 /* (example usage kept as comment)
 <img src="images/example.jpg" alt="Description" class="thumb-right">
 <p>Text flows around the image...</p>
 */
+
