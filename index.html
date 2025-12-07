@@ -67,10 +67,10 @@
       <article class="content-card">
 
   <h2>Growing Up in Color: The 80s as My Foundation</h2>
-  <img src="images/made_in_the_80s.jpg" alt="80s Cartoons" class="thumb-right">
+  <a href="images/made_in_the_80s.jpg"> <img src="images/made_in_the_80s.jpg" alt="80s Cartoons" class="thumb-right"></a>
 <p>I grew up as a child of the 80s, in a world where our cartoons promoted love, harmony, bravery, and the belief that communities, no matter how different their members, could make things better together. At the same time, technology was developing at the same pace I was. Nothing came with instructions, nothing was intuitive, and nothing was standardized. We had to explore, experiment, take things apart, and learn as we went.</p>
 <br><br>
-<img src="images/google.jpg" alt="Older than Dirt" class="thumb-left">
+        <a href="images/images/google.jpg"><img src="images/google.jpg" alt="Older than Dirt" class="thumb-left"></a>
 <p><strong>A quick generational reality check:</strong> I’m older than Google. Technology didn’t arrive polished or intuitive. We had to learn it one command, one crash, and one reboot at a time. Growing up before the internet gave me a kind of curiosity and resilience that still helps me today.</p>
 <br>
 
@@ -81,7 +81,7 @@
 <p>Because of that, I approach the world with a mix of experimentation, adaptability, and optimism. I have learned to embrace being different rather than trying to fit into structures that were not designed with me in mind. As I explore what global citizenship means, I can see how those early experiences shaped my capacity to welcome difference, navigate uncertainty, and build bridges across perspectives.</p>
 
 <h2>Bringing Color Forward</h2>
-  <img src="images/rainbow.jpg" alt="Rainbow Brite" class="thumb-right" style="max-width: 400px; width: 65%;">
+          <a href="images/rainbow.jpg"><img src="images/rainbow.jpg" alt="Rainbow Brite" class="thumb-right" style="max-width: 400px; width: 65%;"></a>
 <p>This portfolio weaves together the many influences that brought me here: the global experiences that shaped my understanding of community, the cartoons that taught me empathy, the technology that invited me to explore, the neurodivergence that shaped how I see patterns, and the education that continues to broaden my world.</p>
 
 <p>I hope that as you explore these pages, you will see not only the story of where I have been, but also the values I carry forward. Curiosity, compassion, and the belief that everyone deserves a world full of color.</p>
@@ -102,5 +102,35 @@
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
 </script>
+<audio id="site-audio" src="audio/brandnewday.mp3" autoplay></audio>
+
+<script>
+  window.addEventListener("load", () => {
+    const audio = document.getElementById("site-audio");
+
+    // Start muted to pass autoplay rules
+    audio.volume = 0;
+    audio.muted = true;
+
+    // Try to play
+    audio.play().then(() => {
+      // After autoplay succeeds, unmute + fade in
+      audio.muted = false;
+      let vol = 0;
+
+      const fade = setInterval(() => {
+        if (vol < 0.6) {  // Target volume
+          vol += 0.05;
+          audio.volume = vol;
+        } else {
+          clearInterval(fade);
+        }
+      }, 200);
+    }).catch(err => {
+      console.log("Autoplay blocked; user will need to interact first.");
+    });
+  });
+</script>
+
 </body>
 </html>
